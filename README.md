@@ -1,4 +1,4 @@
-# Queries_Exercises
+# connection_pooling_task
 
 ## Project Overview
 This project is a Docker-based setup that utilizes PostgreSQL to manage a database schema related to geographical and demographic data. The database consists of tables for continents, countries, people, and their relationships, including citizenship. The setup is designed to demonstrate various SQL queries and their results based on the provided schema and data.
@@ -56,11 +56,11 @@ The `/db` directory contains `SQL` scripts that initialize the database schema a
 2. Run the following command to clone the repository:
 
    ```bash
-   git clone <https://github.com/BrianVega/Queries_Exercises.git>
+   git clone <https://github.com/BrianVega/connection_pooling_task.git>
    ```
 3. Navigate to project repository
     ```bash
-      cd Queries_Exercises
+      cd connection_pooling_task
     ```
 
 ### Run the container ###
