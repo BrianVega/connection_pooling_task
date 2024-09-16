@@ -123,4 +123,3 @@ Custom implementation of `DataSource` that provides a single connection for all 
 ### `DbUtilsHikariCP.java`
 
 Configuration for HikariCP, including setting up the connection pool.
-
