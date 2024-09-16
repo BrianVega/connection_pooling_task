@@ -56,10 +56,9 @@ This will execute the application with 10 threads and measure the time taken for
 
 ## Results
 
-The application prints the following results:
+### Behavior
 
-- **DataSource result**: Time taken to execute operations using a single `DataSource` instance.
-- **Pool connection result**: Time taken to execute operations using HikariCP connection pooling.
+When using a ResultSet and reading the output, the application prints the following results:
 
 ## Example Output
 
@@ -69,10 +68,35 @@ John Doe
 John Doe 
 John Doe 
 John Doe 
-DataSource result: 456 ms 
-Pool connection result: 33 ms
+Pool Connection
+John Doe 
+John Doe 
+John Doe 
+John Doe 
+John Doe 
+John Doe 
+John Doe 
+John Doe 
+John Doe 
+John Doe 
 ```
+We can see that even when 10 threads where executed, just 5 `John Doe` where printed, while on the other hand, when using the pool of connections, all threads retrieved data successfully.
 
+### Performance
+
+When executing the `pg_sleep(5)` statement we can see that the results are as follows:
+
+
+- **DataSource result**: Time taken to execute operations using a single `DataSource` instance.
+- **Pool connection result**: Time taken to execute operations using HikariCP connection pooling.
+
+
+## Example Output
+
+```
+DataSource result: 55843
+Pool connection result: 15045
+```
 
 ## Key Components
 
@@ -99,10 +123,4 @@ Custom implementation of `DataSource` that provides a single connection for all 
 ### `DbUtilsHikariCP.java`
 
 Configuration for HikariCP, including setting up the connection pool.
-
-## Notes
-
-- Ensure that the PostgreSQL database is running and accessible with the provided credentials.
-- Adjust the thread count and connection pool size based on your system's capabilities and performance testing results.
-- Monitor database and application performance to fine-tune the configuration.
 
